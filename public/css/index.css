@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    color: #000;
+}
+
+.dropdown-toggle:hover {
+    color: #000;
+}
+
+.header-cart-container {
+    width: 5rem;
+}
+
+.header-cart-dropdown-item {
+    border-bottom: thin solid #AFAFAF;
+    padding: .2rem 0 .2rem .1rem;
+}
+
+.header-cart-dropdown-ul {
+    min-width: 5rem;
+    padding: 0;
+}
+
+.header-cart-image {
+    width: 40px;
+}
+
+.header-container {
+    background-color: rgba(132, 253, 80, 0.418);
+    height: 5rem;
+}
+

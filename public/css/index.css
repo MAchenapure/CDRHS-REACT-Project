@@ -8,12 +8,36 @@ body {
     font-size: 16px;
 }
 
+.btn-minus {
+    border-radius: .3rem 0 0 .3rem;
+}
+
+.btn-plus {
+    border-radius: 0 .3rem .3rem 0;
+}
+
+.cart-add-btn {
+    background-color: rgb(43, 135, 255);
+    border: thin solid black;
+    border-radius: .2rem;
+    color: white;
+}
+
 .dropdown-toggle {
     color: #000;
 }
 
 .dropdown-toggle:hover {
     color: #000;
+}
+
+.form-quant-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    text-align: center;
+    width: fit-content;
 }
 
 .header-cart-container {
@@ -39,3 +63,34 @@ body {
     height: 5rem;
 }
 
+.quant-input {
+    border: thin solid black;
+    justify-items: center;
+    text-align: center;
+    width: 3.5rem;
+}
+
+.quant-input-btn {
+    align-items: center;
+    background-color: rgb(43, 135, 255);
+    border: thin solid black;
+    color: white;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    margin: 0;
+    width: 2rem;
+}
+
+.quant-input-btn span {
+    margin: 0;
+    padding: 0;
+}
+
+.quant-input-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: .5rem;
+    width: fit-content;
+}

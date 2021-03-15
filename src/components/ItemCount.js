@@ -1,13 +1,14 @@
 import { useState } from "react";
 
-const ItemCount = ({stock, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [value, setValue] = useState(1);
+    const [value, setValue] = useState(initial);
     
     const valueChange = (e) => setValue(e.target.value);
-    const subtractValue = () => (value>0) ? setValue((value)=>(value-1)):'';
-    const addValue = () => setValue((value)=>(value+1));
-    const getValue = () => value;
+    const subtractValue = () => (value>0) && setValue((value) => (value-1));
+    const addValue = () => {
+        (value<stock) ? setValue((value) => (value+1)) : (setValue((value) => (value=stock)));
+    };
 
     return (
         <form className="form-quant-input">
@@ -21,9 +22,9 @@ const ItemCount = ({stock, onAdd}) => {
                     <span>+</span>
                 </button>
             </div>
-            <button className="cart-add-btn" onClick={(e) => {onAdd(e, getValue())}}>Añadir al carrito</button>
+            <button className="cart-add-btn" onClick={e => onAdd(e, value)}>Añadir al carrito</button>
         </form>
-     );
- };
+    );
+};
 
  export default ItemCount;

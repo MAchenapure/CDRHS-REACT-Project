@@ -63,6 +63,14 @@ body {
     height: 5rem;
 }
 
+.prod-img {
+    width: 100px;
+}
+
+.product-item-list {
+    margin-bottom: 1rem;
+}
+
 .quant-input {
     border: thin solid black;
     justify-items: center;

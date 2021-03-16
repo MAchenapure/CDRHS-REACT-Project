@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import ItemCount from './ItemCount';
+import ItemList from './ItemList';
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({product}) => {
     const [currentStock, setCurrentStock] = useState(10);
 
     const onAdd = (e, valueRequested) => {
@@ -11,8 +12,8 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <div>
-            <p>{greeting}</p>
             <ItemCount stock={currentStock} initial={0} onAdd={onAdd}/>
+            <ItemList product={product}/>
         </div>
     );
 };

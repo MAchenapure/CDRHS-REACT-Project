@@ -9,23 +9,10 @@ function App() {
     new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(
-            [{
-            id:'001',
-            title: 'Peine de madera',
-            price: 300,
-            pictureUrl: "./images/products/PEINES MADERA.jpg"
-            }, {
-            id:'002',
-            title: 'Luffa esponja', 
-            price: 200,
-            pictureUrl: "./images/products/LUFFAS.jpg"
-            }, {
-            id:'003', 
-            title: 'Espejo de madera', 
-            price: 250,
-            pictureUrl: "./images/products/ESPEJO MADERA.jpg"}])}
-            ,1000);
-      }).then(resolve => setProducts(resolve)); 
+            require("./assets/productsDataBase.json")
+          )
+        },2000);
+    }).then(resolve => setProducts(resolve)); 
   }, []);
 
   return (

@@ -12,7 +12,6 @@ const ItemListContainer = ({product}) => {
 
     return (
         <div>
-            <ItemCount stock={currentStock} initial={0} onAdd={onAdd}/>
             <ItemList product={product}/>
         </div>
     );

@@ -1,22 +1,20 @@
-import ItemDetailContainer from "./ItemDetailContainer"
+import ItemDetailContainer from "./ItemDetailContainer";
+import { Link, NavLink } from "react-router-dom";
+
 
 const Item = ({product}) => {
     return(
         <>
         <div className="card item-card" style={{width: 18 + 'rem'}}>
-            <img src={product.pictureUrl} className="card-img-top"/>
-
+            <Link to={`/item/${product.title}`}>
+                <img src={product.pictureUrl} className="card-img-top"/>
+            </Link>
             <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">${product.price}</p>
-                <a data-bs-toggle="collapse" href={'#prodDescription' + product.id} role="button" aria-expanded="false" aria-controls="collapseExample">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down" viewBox="0 0 16 16">
-                        <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
-                    </svg>
-                </a>
+                <NavLink to={`/item/${product.title}`} className="card-prod-title">
+                    <h5>{product.title}</h5>
+                </NavLink>
+                <p>${product.price}</p>
             </div>
-
-            <ItemDetailContainer product={product}/>
         </div>
         </>
     );

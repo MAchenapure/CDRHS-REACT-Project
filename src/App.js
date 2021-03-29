@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
+import RouterApp from './routers/RouterApp';
 
 function App() {
-  const [product, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     new Promise((resolve, reject) => {
@@ -12,19 +10,19 @@ function App() {
           resolve(
             require("./assets/productsDataBase.json")
           )
-        },2000);
+        },1000);
     }).then(resolve => setProducts(resolve)); 
   }, []);
 
+  const getProduct = (title => {
+    let aux = products.find(array => array.title == title);
+    return aux;
+  })
+
   return (
-    <>
-    <BrowserRouter>
-      <Route exact path="/">
-        <NavBar />
-        <ItemListContainer product={product}/>
-      </Route>
-    </BrowserRouter>
-    </>
+  <>
+    <RouterApp product={products} getProduct={getProduct}/>
+  </>
   );
 }
 

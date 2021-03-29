@@ -1,6 +1,8 @@
-import Item from './Item';
+import Styles from './ItemList.css';
+import Item from '../Item/Item';
 
 const ItemList = ({product}) => {
+
     return(
         <>
             <div className="item-list-container">

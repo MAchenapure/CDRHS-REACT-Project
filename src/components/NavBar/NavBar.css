@@ -1,0 +1,14 @@
+.header-cat-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
+    display: block;
+    background-color: #c7eb9a;
+    height: 6rem;
+}
+
+.nav-link-item {
+    border-top: thin solid #565756
+}

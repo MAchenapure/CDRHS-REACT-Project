@@ -1,0 +1,33 @@
+.dropdown-toggle {
+    color: #000;
+}
+
+.dropdown-toggle:hover {
+    color: #000;
+}
+
+.header-cart-container {
+    width: 5rem;
+}
+
+.header-cart-dropdown-item {
+    border-bottom: thin solid #AFAFAF;
+    padding: .2rem 0 .2rem .1rem;
+}
+
+.header-cart-dropdown-ul {
+    min-width: 5rem;
+    padding: 0;
+}
+
+.header-cart-image {
+    width: 35px;
+}
+
+.nav-link {
+    color: #574b4b!important;
+}
+
+.nav-link:hover {
+    color: black!important;
+}

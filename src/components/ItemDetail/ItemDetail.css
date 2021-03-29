@@ -1,0 +1,25 @@
+.item-detail {
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    padding: 50px 40px;
+}
+
+.item-detail-img {
+    justify-self: center;
+    width: 500px;
+}
+
+.item-img-desc-container {
+    width: 30rem;
+}
+
+.item-info-purch-container {
+    padding-left: 2rem;
+    width: 30%;
+}
+
+.item-info-purch-container h2 {
+    font-size: 26px;
+    font-weight: 600;
+}

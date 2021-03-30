@@ -8,7 +8,7 @@ const ItemListContainer = ({product}) => {
     
     useEffect(() => {
         if (categoryId) {
-            let aux = product.filter(array => array.category == categoryId);
+            let aux = product.filter(array => array.category === categoryId);
             setItem(aux);
         }}, [categoryId])
 

@@ -1,8 +1,8 @@
 import Styles from './ItemCount.css';
 import { useState } from "react";
+import { NavLink } from 'react-router-dom';
 
-const ItemCount = ({stock, initial, onAdd}) => {
-
+const ItemCount = ({stock, initial, onAdd, finalValid}) => {
     const [value, setValue] = useState(initial);
     
     const valueChange = (e) => setValue(e.target.value);
@@ -10,10 +10,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const addValue = () => {
         (value<stock) ? setValue((value) => (value+1)) : (setValue((value) => (value=stock)));
     };
-
     return (
         <form className="form-quant-input">
-            Stock: {stock}
+            Cantidad:
             <div className="quant-input-container">
                 <button className="quant-input-btn btn-minus" onClick={(e) => {e.preventDefault();subtractValue()}}>
                     <span>-</span>
@@ -24,6 +23,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 </button>
             </div>
             <button className="cart-add-btn" onClick={e => onAdd(e, value)}>Añadir al carrito</button>
+            {
+                console.log(finalValid)
+            }
+            {
+                (finalValid == true) && <NavLink to='/cart' className="cart-purch-btn">Finalizar compra</NavLink>
+            }
         </form>
     );
 };

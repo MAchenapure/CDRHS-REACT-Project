@@ -11,6 +11,17 @@
     border: thin solid black;
     border-radius: .2rem;
     color: white;
+    margin-bottom: .1rem;
+    padding: .5rem;
+}
+
+.cart-purch-btn {
+    background-color: white;
+    border: thin solid black;
+    border-radius: .2rem;
+    color: rgb(43, 135, 255);
+    padding: .5rem;
+    text-decoration: none;
 }
 
 .form-quant-input {
@@ -53,4 +64,6 @@
     margin: 0;
     padding: 0;
 }
+
+
 

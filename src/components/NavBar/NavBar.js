@@ -1,5 +1,5 @@
 import Styles from './NavBar.css'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import PachaBrand from '../../images/pacha.png';
 

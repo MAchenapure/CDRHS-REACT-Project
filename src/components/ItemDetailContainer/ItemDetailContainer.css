@@ -1,3 +1,7 @@
 .item-detail-container {
+    background-color: rgb(246, 246, 246);
+    display: flex;
     font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    height: 100%;
 }

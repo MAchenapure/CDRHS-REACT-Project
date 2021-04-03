@@ -6,9 +6,12 @@
 .header-container {
     display: block;
     background-color: #c7eb9a;
-    height: 6rem;
+}
+
+.nav-link {
+    padding-bottom: 0;
 }
 
 .nav-link-item {
-    border-top: thin solid #565756
+    border-top: thin solid #565756;
 }

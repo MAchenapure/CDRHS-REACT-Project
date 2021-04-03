@@ -38,7 +38,7 @@ const ItemDetail = ({ product }) => {
                 {
                     dinamicStock > 0 
                     ? <ItemCount stock={dinamicStock} initial={0} onAdd={onAdd} finalValid={finalValid} />
-                    : <p> No hay stock! </p>
+                    : <p>¡ Por el momento no contamos con más stock !</p>
                 }
             </div>
         </section>

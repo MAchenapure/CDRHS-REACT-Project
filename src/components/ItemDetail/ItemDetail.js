@@ -1,29 +1,46 @@
 import Styles from './ItemDetail.css';
 import { Image } from "cloudinary-react";
 import ItemCount from '../ItemCount/ItemCount';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({ product }) => {
     const [currentStock, setCurrentStock] = useState('');
     const [dinamicStock, setDinamicStock] = useState('');
     const [finalValid, setFinalValid] = useState('');
 
-    const onAdd = (e, valueRequested) => {
-        e.preventDefault();
-
-        if(valueRequested <= dinamicStock) {
-            setDinamicStock (dinamicStock - valueRequested)
-            setFinalValid(true);
-        } else {
-            alert('El valor solicitado supera el stock');
-        }
-    }
+    // Cart Context
+    const cartCont = useContext(CartContext);
     
     useEffect(() => {
         setCurrentStock(product.stock);
         setDinamicStock(currentStock);
         setFinalValid(false);
     }, [currentStock]);
+
+    const onAdd = (e, valueRequested) => {
+        e.preventDefault();
+
+        if (valueRequested <= dinamicStock) {
+            if (!cartCont.isInCart(product.id)){
+                setDinamicStock (dinamicStock - valueRequested)
+                setFinalValid(true);
+    
+                cartCont.addItem({
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    quantity: valueRequested,
+                    totalPrice: product.price * valueRequested
+                });
+            } else {
+                alert('Este producto ya está añadido en el carrito')
+            }
+            
+        } else {
+            alert('El valor solicitado supera el stock');
+        }
+    }
 
     return (
         <section className="item-detail">

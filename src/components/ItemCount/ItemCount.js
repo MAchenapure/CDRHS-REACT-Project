@@ -10,6 +10,7 @@ const ItemCount = ({stock, initial, onAdd, finalValid}) => {
     const addValue = () => {
         (value<stock) ? setValue((value) => (value+1)) : (setValue((value) => (value=stock)));
     };
+    
     return (
         <form className="form-quant-input">
             Cantidad:
@@ -23,9 +24,6 @@ const ItemCount = ({stock, initial, onAdd, finalValid}) => {
                 </button>
             </div>
             <button className="cart-add-btn" onClick={e => onAdd(e, value)}>Añadir al carrito</button>
-            {
-                console.log(finalValid)
-            }
             {
                 (finalValid == true) && <NavLink to='/cart' className="cart-purch-btn">Finalizar compra</NavLink>
             }

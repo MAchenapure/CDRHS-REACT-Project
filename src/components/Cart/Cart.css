@@ -1,0 +1,30 @@
+.btn-clear-cart {
+    width: fit-content;
+}
+
+.cart-detail-container {
+    background-color: white;
+    border: thin solid #d4d1d1;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 10rem;
+    padding: 50px 40px;
+    width: 50%;  
+}
+
+.cart-detail-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-container {
+    background-color: rgb(246, 246, 246);
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    height: 100%;
+}

@@ -17,9 +17,14 @@ function App() {
     }).then(resolve => setProducts(resolve)); 
   }, []);
   
-  // Add item to cart logic.
+  // Add item to cart logic
   const addItem = id => {
     cart.push(id);
+  }
+
+  // Clear cart logic
+  const clearCart = () => {
+    setCart([]);
   }
 
   // Get product petition from ItemListContainer
@@ -39,9 +44,22 @@ function App() {
     return valid
   }
 
+  // Remove cart item logic
+  const removeItem = id => {
+    let aux = [];
+
+    for (let i=0; i < cart.length; i++){
+      if (cart[i].id !== id){
+        aux.push(cart[i]);
+      }
+    }
+
+    setCart(aux);
+  }
+
   return (
   <>
-    <CartContext.Provider value={{cart: cart, addItem: addItem, isInCart: isInCart}}>
+    <CartContext.Provider value={{cart: cart, addItem: addItem, clearCart: clearCart, isInCart: isInCart, removeItem: removeItem}}>
       <RouterApp product={products} getProduct={getProduct}/>
     </CartContext.Provider>
   </>

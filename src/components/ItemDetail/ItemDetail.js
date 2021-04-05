@@ -31,7 +31,8 @@ const ItemDetail = ({ product }) => {
                     title: product.title,
                     price: product.price,
                     quantity: valueRequested,
-                    totalPrice: product.price * valueRequested
+                    totalPrice: product.price * valueRequested,
+                    pictureUrl: product.pictureUrl
                 });
             } else {
                 alert('Este producto ya está añadido en el carrito')

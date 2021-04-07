@@ -2,14 +2,24 @@ import Styles from './NavBar.css'
 import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import PachaBrand from '../../images/pacha.png';
+import CartContext from '../../context/CartContext'
+import { useContext, useEffect, useState } from 'react';
 
-const NavBar = () => (
-    <nav className="navbar navbar-expand-lg navbar-light header-container">
+const NavBar = () => {
+    const [cartLength, setCartLength] = useState(0);
+    const cartContext = useContext(CartContext);
+
+    useEffect(() => {
+        setCartLength(cartContext.length);
+    });
+
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light header-container">
         <div className="container-fluid">
             <NavLink to={`/`} className="navbar-brand">
                 <img src={PachaBrand} alt="Pacha Sustentable" width="200" className="d-inline-block"/>
             </NavLink>
-            <CartWidget />
+            {cartLength !== 0 && <CartWidget />}
         </div>
 
         <div className="container-fluid">
@@ -33,6 +43,7 @@ const NavBar = () => (
             </div>
         </div>
     </nav>
-);    
+    )
+};
 
 export default NavBar;

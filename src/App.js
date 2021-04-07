@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 import CartContext from './context/CartContext';
 import RouterApp from './routers/RouterApp';
 
+
+// TODO - Colocar saltos de línea en el productsDataBase.json (por ej \n) y luego con métodos de strings reemplazar esos saltos por < br/>
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [cartLength, setCartLength] = useState(0);
 
   useEffect(() => {
     // Promise that get the products info from a JSON.
@@ -18,13 +21,21 @@ function App() {
   }, []);
   
   // Add item to cart logic
-  const addItem = id => {
-    cart.push(id);
+  const addItem = item => {
+    let aux = cart;
+    aux.push(item);
+    setCart(aux);
   }
 
   // Clear cart logic
   const clearCart = () => {
     setCart([]);
+    setCartLength(0);
+  }
+
+  // Returns cart length
+  const getLength = () => {
+    return cart.length;
   }
 
   // Get product petition from ItemListContainer
@@ -53,13 +64,17 @@ function App() {
         aux.push(cart[i]);
       }
     }
-
     setCart(aux);
+
+    let auxLength = cart.length - 1; 
+    setCartLength(auxLength);
   }
+
+  const setLength = () => setCartLength(cart.length);
 
   return (
   <>
-    <CartContext.Provider value={{cart: cart, addItem: addItem, clearCart: clearCart, isInCart: isInCart, removeItem: removeItem}}>
+    <CartContext.Provider value={{cart: cart, length: cartLength, addItem: addItem, clearCart: clearCart, getLength: getLength, isInCart: isInCart, removeItem: removeItem, setLength: setLength}}>
       <RouterApp product={products} getProduct={getProduct}/>
     </CartContext.Provider>
   </>

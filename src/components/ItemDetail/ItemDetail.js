@@ -8,6 +8,7 @@ const ItemDetail = ({ product }) => {
     const [currentStock, setCurrentStock] = useState('');
     const [dinamicStock, setDinamicStock] = useState('');
     const [finalValid, setFinalValid] = useState('');
+    const [description, setDescription] = useState('');
 
     // Cart Context
     const cartCont = useContext(CartContext);
@@ -16,6 +17,8 @@ const ItemDetail = ({ product }) => {
         setCurrentStock(product.stock);
         setDinamicStock(currentStock);
         setFinalValid(false);
+        // Split of product.description to be able to print every sentence as a paragraph with breaklines (Render - Line 53)
+        product.description !== undefined && setDescription(product.description.split("<br>"));
     }, [currentStock]);
 
     const onAdd = (e, valueRequested) => {
@@ -34,6 +37,8 @@ const ItemDetail = ({ product }) => {
                     totalPrice: product.price * valueRequested,
                     pictureUrl: product.pictureUrl
                 });
+
+                cartCont.setLength();
             } else {
                 alert('Este producto ya está añadido en el carrito')
             }
@@ -47,7 +52,9 @@ const ItemDetail = ({ product }) => {
         <section className="item-detail">
             <div className="item-img-desc-container">
                 <Image cloudName="machenapure" className="img-fluid item-detail-img" publicId={product.pictureUrl}/>
-                <p>{product.description}</p>
+                <span>
+                    {description !== '' && description.map((x, index) => <p key={index}>{x}</p>)}
+                </span>
             </div>
             <div className="item-info-purch-container">
                 <h2>{product.title}</h2>

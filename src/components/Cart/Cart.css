@@ -21,6 +21,27 @@
     padding: 0;
 }
 
+.empty-cart-container {
+    background-color: white;
+    border: thin solid #d4d1d1;
+    border-radius: .5rem;
+    display: inline-block;
+    height: fit-content;
+    margin-top: 1.5rem;
+    margin-bottom: 10rem;
+    padding: 50px 40px;
+    width: 40%;
+}
+
+.empty-cart-container > * {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.empty-cart-container h3 {
+    margin-bottom: .7rem!important;
+}
+
 .main-container {
     background-color: rgb(246, 246, 246);
     display: flex;

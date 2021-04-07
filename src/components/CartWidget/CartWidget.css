@@ -1,3 +1,7 @@
+.badge {
+    background-color: #aee46c!important;
+    margin-left: .2rem;
+}
 
 .header-cart-container {
     width: fit-content;

@@ -19,7 +19,7 @@ const NavBar = () => {
             <NavLink to={`/`} className="navbar-brand">
                 <img src={PachaBrand} alt="Pacha Sustentable" width="200" className="d-inline-block"/>
             </NavLink>
-            {cartLength !== 0 && <CartWidget />}
+            {cartLength !== 0 && <CartWidget cartLength={cartLength}/>}
         </div>
 
         <div className="container-fluid">

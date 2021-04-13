@@ -6,7 +6,7 @@ const ItemList = ({product}) => {
     return(
         <>
             <div className="item-list-container">
-                {product.map((x, index) => (
+                {product != undefined && product.map((x, index) => (
                     <Item key={index} product={x} />
                 ))}
             </div>

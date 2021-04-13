@@ -1,24 +1,26 @@
-import { useEffect, useState } from 'react';
-import CartContext from './context/CartContext';
-import RouterApp from './routers/RouterApp';
+import { useEffect, useState } from 'react'
+import CartContext from './context/CartContext'
+import RouterApp from './routers/RouterApp'
+import {getFirestore} from './config/Firebase'
 
-
-// TODO - Colocar saltos de línea en el productsDataBase.json (por ej \n) y luego con métodos de strings reemplazar esos saltos por < br/>
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [cartLength, setCartLength] = useState(0);
 
   useEffect(() => {
-    // Promise that get the products info from a JSON.
-    new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(
-            require("./assets/productsDataBase.json")
-          )
-        },1000);
-    }).then(resolve => setProducts(resolve)); 
-  }, []);
+    const db = getFirestore(); 
+    const allProds = db.collection("Products");
+
+    allProds.get().then(res => {
+      if (res.size > 0){
+        setProducts(res.docs.map(x => {
+          let aux = {id: x.id, ...x.data()};
+          return aux;
+        }));
+      }
+    }).catch( error => console.log("Error con el get a Firebase: " + error));
+  },[]);
   
   // Add item to cart logic
   const addItem = item => {

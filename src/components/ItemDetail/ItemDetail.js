@@ -32,9 +32,9 @@ const ItemDetail = ({ product }) => {
                 cartCont.addItem({
                     id: product.id,
                     title: product.title,
-                    price: product.price,
+                    price: Number(product.price),
                     quantity: valueRequested,
-                    totalPrice: product.price * valueRequested,
+                    totalPrice: Number(product.price * valueRequested),
                     pictureUrl: product.pictureUrl
                 });
 

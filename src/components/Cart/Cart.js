@@ -9,19 +9,22 @@ const Cart = () => {
     const cartContext = useContext(CartContext);
 
     // Conditional rendering
-    if (cartContext.cart.length != 0) {
+    if (cartContext.cart.items.length != 0) {
         return (
             <div className="main-container">
                 <div className="cart-detail-container">
                     <ul className="cart-detail-ul">
                         {
-                            cartContext.cart.map((x, index) => (
+                            cartContext.cart.items.map((x, index) => (
                                 <CartItem key={index} product={x} removeItem={cartContext.removeItem}/>
                             ))
                         }
                     </ul>
                     <button className="btn-clear-cart" onClick={()=>cartContext.clearCart()}>
                         Vaciar carrito
+                    </button>
+                    <button className="btn-clear-cart" onClick={()=>cartContext.buyOrder()  }>
+                        Comprar
                     </button>
                 </div>
             </div>

@@ -1,3 +1,6 @@
+Pacha Sustentable is an Argentine store that offers sustainable solutions for daily needs.
+This project is an e-commerce developed with React JS.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

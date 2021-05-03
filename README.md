@@ -5,7 +5,8 @@ This project is an e-commerce developed with React JS.
 
 ![pacha-brandlogo](https://raw.githubusercontent.com/MAchenapure/CDRHS-REACT-Project/main/src/images/pacha.png)
 
-## Project Screen Shots
+## Project Preview
+![project-preview](https://raw.githubusercontent.com/MAchenapure/CDRHS-REACT-Project/main/src/images/project-preview.gif)
 
 ## Starting 🚀
 _This instructions will allow you to clone this proyect in your local machine for development and tests purposes. Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._

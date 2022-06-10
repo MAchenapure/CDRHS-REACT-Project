@@ -16,6 +16,7 @@ function App() {
       if (res.size > 0){
         setProducts(res.docs.map(x => {
           let aux = {id: x.id, ...x.data()};
+          console.log(aux);
           return aux;
         }));
       }

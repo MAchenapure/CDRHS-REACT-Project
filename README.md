@@ -1,6 +1,6 @@
 # Pacha Sustentable
 
-Pacha Sustentable is an Argentine store that offers sustainable solutions for daily needs.\
+Pacha Sustentable is an Argentinian store that offers sustainable solutions for daily needs.\
 This project is an e-commerce developed with React JS.
 
 ![pacha-brandlogo](https://raw.githubusercontent.com/MAchenapure/CDRHS-REACT-Project/main/src/images/pacha.png)
